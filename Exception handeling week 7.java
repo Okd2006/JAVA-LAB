@@ -27,19 +27,27 @@ class son extends father{
 
 
 
-public class ExceptionsDemo{
-    public static void main(String[] args){
-        try{
-            son s=new son(50,10);
-            System.out.println("Object created succesfully");
-        }catch(father.WrongAge e){
-            System.out.println("Exception caught : "+e.getMessage());
+import java.util.Scanner;
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter father's age: ");
+        int fage = sc.nextInt();
+
+        System.out.print("Enter son's age: ");
+        int sage = sc.nextInt();
+
+        try {
+            son s = new son(fage, sage);
+            System.out.println("Object created successfully!");
+        } catch (father.WrongAge e) {
+            System.out.println("Exception caught: " + e.getMessage());
         }
-        try{
-            son s=new son(50,60);
-            System.out.println("Object created succesfully");
-        }catch(father.WrongAge e){
-            System.out.println("Exception caught : "+e.getMessage());
-        }
+
+        sc.close();
     }
 }
+
