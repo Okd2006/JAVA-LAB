@@ -1,9 +1,11 @@
 class BMS extends Thread{
     public void run(){
-        while(true){
+        int c=0;
+        while(c<5){
             System.out.println("BMS college of Engineering");
             try{
                 Thread.sleep(10000);
+                c++;
             }catch(InterruptedException e){
                 System.out.println(e);
             }
@@ -12,10 +14,12 @@ class BMS extends Thread{
 }
 class CSE extends Thread{
     public void run(){
-        while(true){
+        int count=0;
+        while(count<5){
             System.out.println("CSE");
             try{
                 Thread.sleep(2000);
+                count++;
             }catch(InterruptedException e){
                 System.out.println(e);
             }
@@ -31,4 +35,3 @@ public class ThreadDemo{
 
     }
 }
-
